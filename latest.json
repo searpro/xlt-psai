@@ -1,63 +1,27 @@
 {
   "version": "1.0.0",
-  "models": {
-    "image": [
-      {
-        "name": "Z-image-turbo",
-        "description": "Z-image-turbo is a powerful image generation model that can create high-quality images based on text prompts. It is designed to be fast and efficient, making it ideal for a wide range of applications, including art creation, design, and content generation.",
-          "gguf": [
-            {
-              "filename": "z-image-BF16.gguf",
-              "size": "12.3 GB",
-              "url": "https://huggingface.co/unsloth/Z-Image-GGUF/resolve/main/z-image-BF16.gguf"
-            },
-            {
-              "filename": "z-image-Q2.gguf",
-              "size":  "4.59 GB",
-              "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_nvfp4.safetensors"
-            }
-          ],
-          "safetensors": [
-            {
-              "filename": "z-image-turbo.safetensors",
-              "size": "4.59 GB",
-              "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_nvfp4.safetensors"
-            }
-          ],
-          "vae": {
-            "filename": "ae.safetensors",
-            "size": "1.2 GB",
-            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors"
-          },
-          "text_encoder": {
-            "filename": "qwen_3_4b_fp4_mixed.safetensors",
-            "size": "3.48 GB",
-            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b_fp4_mixed.safetensors"
-          }
-      }
-    ],
-    "audio": [
-      {
-        "name": "AceStep 1.5",
-        "description": "AceStep 1.5 is an advanced audio generation model that can create high-quality music and sound effects based on text prompts. It is designed to be fast and efficient",
-        "safetensors": [
-          {
-            "url": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/checkpoints/ace_step_1.5_turbo_aio.safetensors"
-          }
-        ],
-        "gguf": [
-          {
-            "fileName": "acestep-v15-turbo-Q4_K_M.gguf",
-            "url": "https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-Q4_K_M.gguf"
-          }
-        ],
-        "vae": {
-          "url": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/vae/ace_1.5_vae.safetensors"
-        },
-        "text_encoder": {
-          "url": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors"
-        }
-      }
-    ]
-  }
+  "models": [
+    {
+      "id": "z-image-turbo",
+      "name": "Z-image-turbo Q2",
+      "type": "image",
+      "size":  "4.59 GB",
+      "description": "High-quality image generation with improved composition and face generation",
+      "version": "1.0",
+      "unet": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_nvfp4.safetensors",
+      "vae": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
+      "text_encoder": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b_fp4_mixed.safetensors"
+    },
+    {
+      "id": "ace-step-1.5",
+      "name": "AceStep 1.5",
+      "type": "audio",
+      "size": "5.2 GB",
+      "description": "Advanced audio generation model with improved music and sound effect quality",
+      "version": "1.0",
+      "unet": "https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-Q4_K_M.gguf",
+      "vae": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/vae/ace_1.5_vae.safetensors",
+      "text_encoder": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors"
+    }
+  ]
 }
