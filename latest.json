@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.0",
   "models": [
     {
       "id": "z-image-turbo",
@@ -30,9 +30,9 @@
       "size": "1.0 GB",
       "description": "A test model for verifying download functionality",
       "version": "1.0",
-      "unet": "https://link.testfile.org/500MB",
-      "vae": "https://link.testfile.org/300MB",
-      "text_encoder": "https://link.testfile.org/200MB"
+      "unet": "https://getsamplefiles.com/download/zip/sample-5.zip",
+      "vae": "https://getsamplefiles.com/download/zip/sample-3.zip",
+      "text_encoder": "https://getsamplefiles.com/download/zip/sample-2.zip"
     }
   ]
 }
