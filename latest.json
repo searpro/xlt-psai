@@ -30,9 +30,9 @@
       "size": "1.0 GB",
       "description": "A test model for verifying download functionality",
       "version": "1.0",
-      "unet": "https://getsamplefiles.com/download/zip/sample-5.zip",
-      "vae": "https://getsamplefiles.com/download/zip/sample-3.zip",
-      "text_encoder": "https://getsamplefiles.com/download/zip/sample-2.zip"
+      "unet": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
+      "vae": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
+      "text_encoder": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors"
     }
   ]
 }
