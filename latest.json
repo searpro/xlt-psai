@@ -22,6 +22,17 @@
       "unet": "https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-Q4_K_M.gguf",
       "vae": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/vae/ace_1.5_vae.safetensors",
       "text_encoder": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors"
+    },
+    {
+      "id": "download-tester",
+      "name": "Download Tester",
+      "type": "image",
+      "size": "1.0 GB",
+      "description": "A test model for verifying download functionality",
+      "version": "1.0",
+      "unet": "https://link.testfile.org/500MB",
+      "vae": "https://link.testfile.org/300MB",
+      "text_encoder": "https://link.testfile.org/200MB"
     }
   ]
 }
