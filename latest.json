@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "models": [
     {
       "id": "z-image-turbo",
@@ -24,15 +24,15 @@
       "text_encoder": "https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors"
     },
     {
-      "id": "download-tester",
-      "name": "Download Tester",
-      "type": "image",
-      "size": "1.0 GB",
-      "description": "A test model for verifying download functionality",
+      "id": "flux-2-klein",
+      "name": "Flux 2 Klein",
+      "type": "text",
+      "size": "3.8 GB",
+      "description": "Compact text generation model optimized for conversational AI applications",
       "version": "1.0",
-      "unet": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
+      "unet": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_nvfp4.safetensors",
       "vae": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
-      "text_encoder": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors"
+      "text_encoder": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b_fp4_mixed.safetensors"
     }
   ]
 }
