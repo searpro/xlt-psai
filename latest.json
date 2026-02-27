@@ -26,7 +26,7 @@
     {
       "id": "flux-2-klein",
       "name": "Flux 2 Klein",
-      "type": "text",
+      "type": "image",
       "size": "3.8 GB",
       "description": "Compact text generation model optimized for conversational AI applications",
       "version": "1.0",
