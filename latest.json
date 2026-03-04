@@ -16,6 +16,7 @@
       "workflows": [
         {
           "name": "text to image",
+          "id": "z-image-turbo-text-to-image",
           "workflow": {
             "9": {
               "inputs": {
