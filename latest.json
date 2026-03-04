@@ -15,153 +15,157 @@
       },
       "workflows": [
         {
-          "9": {
-            "inputs": {
-              "filename_prefix": "z-image",
-              "images": [
-                "65",
-                0
-              ]
+          "id": "z-image-turbo-text-to-image",
+          "name": "Text to image",
+          "workflow": {
+            "9": {
+              "inputs": {
+                "filename_prefix": "z-image",
+                "images": [
+                  "65",
+                  0
+                ]
+              },
+              "class_type": "SaveImage",
+              "_meta": {
+                "title": "Save Image"
+              }
             },
-            "class_type": "SaveImage",
-            "_meta": {
-              "title": "Save Image"
-            }
-          },
-          "58": {
-            "inputs": {
-              "value": "##PROMPT##"
+            "58": {
+              "inputs": {
+                "value": "Ultra-realistic portrait photograph of a 28-year-old person or Italian descent, neutral expression, natural facial features with subtle asymmetry, detailed skin texture with visible pores and fine lines, sharp focus on eyes with natural catchlights. Shot on a full-frame DSLR, 85mm lens, f/1.8, shallow depth of field. Soft window light from the left, gentle shadows on the right side of the face. Background is a real indoor setting (minimalist room with light-colored wall and a blurred plant in the corner).\n\nHigh dynamic range, accurate skin tones, no over-smoothing, no beauty filter look. Natural hairstyle, casual clothing (plain t-shirt). Slight imperfections (tiny blemish, faint under-eye shadows) to enhance realism.\n\nPhotorealistic, cinematic color grading, professional photography, RAW photo look, extremely detailed, 8k."
+              },
+              "class_type": "PrimitiveStringMultiline",
+              "_meta": {
+                "title": "Prompt"
+              }
             },
-            "class_type": "PrimitiveStringMultiline",
-            "_meta": {
-              "title": "Prompt"
-            }
-          },
-          "62": {
-            "inputs": {
-              "clip_name": "qwen_3_4b.safetensors",
-              "type": "lumina2",
-              "device": "default"
+            "62": {
+              "inputs": {
+                "clip_name": "qwen_3_4b.safetensors",
+                "type": "lumina2",
+                "device": "default"
+              },
+              "class_type": "CLIPLoader",
+              "_meta": {
+                "title": "Load CLIP"
+              }
             },
-            "class_type": "CLIPLoader",
-            "_meta": {
-              "title": "Load CLIP"
-            }
-          },
-          "63": {
-            "inputs": {
-              "vae_name": "ae.safetensors"
+            "63": {
+              "inputs": {
+                "vae_name": "ae.safetensors"
+              },
+              "class_type": "VAELoader",
+              "_meta": {
+                "title": "Load VAE"
+              }
             },
-            "class_type": "VAELoader",
-            "_meta": {
-              "title": "Load VAE"
-            }
-          },
-          "64": {
-            "inputs": {
-              "conditioning": [
-                "67",
-                0
-              ]
+            "64": {
+              "inputs": {
+                "conditioning": [
+                  "67",
+                  0
+                ]
+              },
+              "class_type": "ConditioningZeroOut",
+              "_meta": {
+                "title": "ConditioningZeroOut"
+              }
             },
-            "class_type": "ConditioningZeroOut",
-            "_meta": {
-              "title": "ConditioningZeroOut"
-            }
-          },
-          "65": {
-            "inputs": {
-              "samples": [
-                "69",
-                0
-              ],
-              "vae": [
-                "63",
-                0
-              ]
+            "65": {
+              "inputs": {
+                "samples": [
+                  "69",
+                  0
+                ],
+                "vae": [
+                  "63",
+                  0
+                ]
+              },
+              "class_type": "VAEDecode",
+              "_meta": {
+                "title": "VAE Decode"
+              }
             },
-            "class_type": "VAEDecode",
-            "_meta": {
-              "title": "VAE Decode"
-            }
-          },
-          "67": {
-            "inputs": {
-              "text": [
-                "58",
-                0
-              ],
-              "clip": [
-                "62",
-                0
-              ]
+            "67": {
+              "inputs": {
+                "text": [
+                  "58",
+                  0
+                ],
+                "clip": [
+                  "62",
+                  0
+                ]
+              },
+              "class_type": "CLIPTextEncode",
+              "_meta": {
+                "title": "CLIP Text Encode (Prompt)"
+              }
             },
-            "class_type": "CLIPTextEncode",
-            "_meta": {
-              "title": "CLIP Text Encode (Prompt)"
-            }
-          },
-          "68": {
-            "inputs": {
-              "width": "##WIDTH##",
-              "height": "##HEIGHT##",
-              "batch_size": 1
+            "68": {
+              "inputs": {
+                "width": 512,
+                "height": 512,
+                "batch_size": 1
+              },
+              "class_type": "EmptySD3LatentImage",
+              "_meta": {
+                "title": "EmptySD3LatentImage"
+              }
             },
-            "class_type": "EmptySD3LatentImage",
-            "_meta": {
-              "title": "EmptySD3LatentImage"
-            }
-          },
-          "69": {
-            "inputs": {
-              "seed": 1057337800435784,
-              "steps": "##STEPS##",
-              "cfg": "##CFG##",
-              "sampler_name": "res_multistep",
-              "scheduler": "simple",
-              "denoise": 1,
-              "model": [
-                "70",
-                0
-              ],
-              "positive": [
-                "67",
-                0
-              ],
-              "negative": [
-                "64",
-                0
-              ],
-              "latent_image": [
-                "68",
-                0
-              ]
+            "69": {
+              "inputs": {
+                "seed": 1057337800435784,
+                "steps": 8,
+                "cfg": 1,
+                "sampler_name": "res_multistep",
+                "scheduler": "simple",
+                "denoise": 1,
+                "model": [
+                  "70",
+                  0
+                ],
+                "positive": [
+                  "67",
+                  0
+                ],
+                "negative": [
+                  "64",
+                  0
+                ],
+                "latent_image": [
+                  "68",
+                  0
+                ]
+              },
+              "class_type": "KSampler",
+              "_meta": {
+                "title": "KSampler"
+              }
             },
-            "class_type": "KSampler",
-            "_meta": {
-              "title": "KSampler"
-            }
-          },
-          "70": {
-            "inputs": {
-              "shift": 3,
-              "model": [
-                "71",
-                0
-              ]
+            "70": {
+              "inputs": {
+                "shift": 3,
+                "model": [
+                  "71",
+                  0
+                ]
+              },
+              "class_type": "ModelSamplingAuraFlow",
+              "_meta": {
+                "title": "ModelSamplingAuraFlow"
+              }
             },
-            "class_type": "ModelSamplingAuraFlow",
-            "_meta": {
-              "title": "ModelSamplingAuraFlow"
-            }
-          },
-          "71": {
-            "inputs": {
-              "unet_name": "z-image-turbo-Q3_K_S.gguf"
-            },
-            "class_type": "UnetLoaderGGUF",
-            "_meta": {
-              "title": "Unet Loader (GGUF)"
+            "71": {
+              "inputs": {
+                "unet_name": "z-image-turbo-Q3_K_S.gguf"
+              },
+              "class_type": "UnetLoaderGGUF",
+              "_meta": {
+                "title": "Unet Loader (GGUF)"
+              }
             }
           }
         }
