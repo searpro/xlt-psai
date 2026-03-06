@@ -195,7 +195,7 @@
       "files": {
         "diffusion_models": "https://huggingface.co/unsloth/FLUX.2-klein-4B-GGUF/resolve/main/flux-2-klein-9b-Q8_0.gguf",
         "vae": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors",
-        "text_encoders": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/main/qwen_3_4b.safetensors"
+        "text_encoders": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/main/Qwen3-8B-Q4_K_M.gguf"
       },
       "workflows": [
         {
@@ -205,7 +205,7 @@
           "workflow": {
             "104": {
               "inputs": {
-                "clip_name": "qwen_3_4b.safetensors",
+                "clip_name": "Qwen3-8B-Q4_K_M.gguf",
                 "type": "flux2",
                 "device": "default"
               },
@@ -590,7 +590,7 @@
             },
             "107": {
               "inputs": {
-                "clip_name": "qwen_3_4b.safetensors",
+                "clip_name": "Qwen3-8B-Q4_K_M.gguf",
                 "type": "flux2",
                 "device": "default"
               },
