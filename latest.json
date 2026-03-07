@@ -193,9 +193,9 @@
       "description": "Compact text generation model optimized for conversational AI applications",
       "version": "1.0",
       "files": {
-        "diffusion_models": "https://huggingface.co/unsloth/FLUX.2-klein-4B-GGUF/resolve/main/flux-2-klein-9b-Q8_0.gguf",
+        "diffusion_models": "https://huggingface.co/unsloth/FLUX.2-klein-4B-GGUF/resolve/main/flux-2-klein-4b-Q3_K_S.gguf",
         "vae": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors",
-        "text_encoders": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/main/Qwen3-8B-Q4_K_M.gguf"
+        "text_encoders": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/main/qwen_3_4b.safetensors"
       },
       "workflows": [
         {
@@ -206,12 +206,11 @@
             "104": {
               "inputs": {
                 "clip_name": "Qwen3-8B-Q4_K_M.gguf",
-                "type": "flux2",
-                "device": "default"
+                "type": "flux2"
               },
-              "class_type": "CLIPLoader",
+              "class_type": "CLIPLoaderGGUF",
               "_meta": {
-                "title": "Load CLIP"
+                "title": "Load CLIP (GGUF)"
               }
             },
             "105": {
@@ -594,9 +593,9 @@
                 "type": "flux2",
                 "device": "default"
               },
-              "class_type": "CLIPLoader",
+              "class_type": "CLIPLoaderGGUF",
               "_meta": {
-                "title": "Load CLIP"
+                "title": "Load CLIP (GGUF)"
               }
             },
             "108": {
@@ -715,7 +714,7 @@
             },
             "119": {
               "inputs": {
-                "unet_name": "flux-2-klein-9b-Q8_0.gguf"
+                "unet_name": "flux-2-klein-4b-Q3_K_S.gguf"
               },
               "class_type": "UnetLoaderGGUF",
               "_meta": {
